@@ -59,6 +59,25 @@ class Occasion(models.Model):
         return self.name
 
 
+
+class Shop(models.Model):
+    '''Магазин'''
+    title = models.CharField(max_length=100)
+    address = models.CharField(max_length=200,
+                               blank=True,
+                               null=True,
+                               verbose_name='адрес магазина')
+    phone_number = models.CharField(max_length=17,
+                                    blank=True,
+                                    null=True,
+                                    verbose_name='номер телефона')
+    photo = models.ImageField(blank=True,
+                              null=True,
+                              verbose_name='Фото')
+    longitude = models.FloatField(verbose_name='долгота', null=True)
+    latitude = models.FloatField(verbose_name='широта', null=True)
+
+    
 class Client(models.Model):
     """Объединенная модель клиента"""
     name = models.CharField(
@@ -77,6 +96,7 @@ class Client(models.Model):
         auto_now_add=True,
         verbose_name="Дата создания",
     )
+
 
     class Meta:
         verbose_name = "Клиент"
