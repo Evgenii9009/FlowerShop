@@ -32,7 +32,7 @@ class Shop(models.Model):
                                blank=True,
                                null=True,
                                verbose_name='адрес магазина')
-    phone_number = models.CharField(max_length=12,
+    phone_number = models.CharField(max_length=17,
                                     blank=True,
                                     null=True,
                                     verbose_name='номер телефона')
